@@ -1,0 +1,64 @@
+<h2>メンバーを追加</h2>
+
+<%= form_for @member, html: { class: 'form-horizontal' } do |f| %>
+  <% if @member.errors.any? %>
+    <div class="alert alert-block alert-error">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <h4><%= @member.errors.count %>個の項目にエラーがあります。</h4>
+      <ul>
+        <% @member.errors.messages.each do |k, v| %>
+          <li><%= v[0] %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+    <div class="control-group">
+      <%= f.label :member_name, '氏名', class: 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :member_name %>重複することはできません。
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :member_name_yomi, '氏名（ふりがな）', class: 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :member_name_yomi %>全角ひらがなのみで入力してください。
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :grade, '期', class: 'control-label' %>
+      <div class="controls">
+        <%= f.number_field :grade, min: 85, max: 120 %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :member_gender, '性別', class: 'control-label' %>
+      <div class="controls">
+        <%= f.select :member_gender, { '男' => true, '女' => false }, prompt: '選択 '%>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :rank_id, 'レベル', class: 'control-label' %>
+      <div class="controls">
+        <%= f.select :rank_id, options_from_collection_for_select(Rank.all, :id, :rank_name), prompt: '選択' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :type_id, '戦型', class: 'control-label' %>
+      <div class="controls">
+        <%= f.select :type_id, options_from_collection_for_select(Type.all, :id, :type_name), prompt: '選択' %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit '登録', class: 'btn btn-primary' %>
+      <%= f.submit '連続登録', class: 'btn btn-primary' %>
+    </div>
+  </fieldset>
+<% end %>

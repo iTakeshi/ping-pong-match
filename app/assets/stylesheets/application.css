@@ -11,3 +11,7 @@
  *= require_self
  *= require_tree .
  */
+
+table.table tr:first-child {
+    border-bottom: double;
+}
