@@ -1,0 +1,28 @@
+<h2>戦型名を変更</h2>
+
+<%= form_for @type, html: { class: 'form-horizontal' } do |f| %>
+  <% if @type.errors.any? %>
+    <div class="alert alert-block alert-error">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <h4><%= @type.errors.count %>個の項目にエラーがあります。</h4>
+      <ul>
+        <% @type.errors.messages.each do |k, v| %>
+          <li><%= v[0] %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+    <div class="control-group">
+      <%= f.label :type_name, '戦型名', class: 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :type_name %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit '変更', class: 'btn btn-primary' %>
+    </div>
+  </fieldset>
+<% end %>

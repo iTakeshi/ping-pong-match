@@ -1,6 +1,7 @@
 PingPong::Application.routes.draw do
 
   resources :ranks
+  resources :types
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,9 @@
+<h2>戦型一覧</h2>
+
+<%= link_to '戦型を追加', new_type_path %>
+
+<ul>
+  <% @types.each do |type| %>
+    <li><%= link_to type.type_name, type %></li>
+  <% end %>
+</ul>
