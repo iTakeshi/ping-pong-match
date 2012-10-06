@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>PingPong</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -11,14 +12,12 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container-fluid">
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li><%= link_to 'シングルス', '/singles' %></li>
-          <li><%= link_to '参加登録', '/attendance' %></li>
-          <li><%= link_to '設定', '/settings' %></li>
-          <li><%= link_to 'help', '/' %></li>
-        </ul>
-      </div>
+      <ul class="nav">
+        <li><%= link_to 'シングルス', '/singles' %></li>
+        <li><%= link_to '参加登録', '/attendance' %></li>
+        <li><%= link_to '設定', '/settings' %></li>
+        <li><%= link_to 'help', '/' %></li>
+      </ul>
     </div>
   </div>
 </div>
