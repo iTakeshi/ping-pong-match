@@ -2,12 +2,18 @@
 
 class RanksController < ApplicationController
 
-  # GET /ranks/new
+  def index
+    @ranks = Rank.all
+  end
+
+  def show
+    @rank = Rank.find(params[:id])
+  end
+
   def new
     @rank = Rank.new
   end
 
-  # POST /ranks/create
   def create
     @rank = Rank.new(params[:rank])
     if @rank.save
@@ -19,6 +25,20 @@ class RanksController < ApplicationController
       end
     else
       render :new
+    end
+  end
+
+  def edit
+    @rank = Rank.find(params[:id])
+  end
+
+  def update
+    @rank = Rank.find(params[:id])
+    if @rank.update_attributes(params[:rank])
+      flash[:success] = "レベル名を変更しました。"
+      redirect_to @rank
+    else
+      render :edit
     end
   end
 end

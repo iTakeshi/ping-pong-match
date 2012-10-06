@@ -1,0 +1,7 @@
+<h2>レベル一覧</h2>
+
+<ul>
+  <% @ranks.each do |rank| %>
+    <li><%= link_to rank.rank_name, rank %></li>
+  <% end %>
+</ul>
