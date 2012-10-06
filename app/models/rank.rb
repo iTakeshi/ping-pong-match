@@ -1,4 +1,5 @@
 class Rank < ActiveRecord::Base
+  has_many :members
   attr_accessible :rank_name
 
   validates :rank_name,

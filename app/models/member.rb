@@ -1,4 +1,7 @@
 class Member < ActiveRecord::Base
+  belongs_to :pair
+  belongs_to :rank
+  belongs_to :type
   attr_accessible :grade, :member_gender, :member_name, :pair_id, :rank_id, :type_id
 
   validates :grade,

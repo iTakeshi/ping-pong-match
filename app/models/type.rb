@@ -1,4 +1,5 @@
 class Type < ActiveRecord::Base
+  has_many :members
   attr_accessible :type_name
 
   validates :type_name,
