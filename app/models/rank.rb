@@ -1,4 +1,4 @@
-# coding :utf-8
+# coding: utf-8
 
 class Rank < ActiveRecord::Base
   has_many :members
