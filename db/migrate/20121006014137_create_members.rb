@@ -4,7 +4,7 @@ class CreateMembers < ActiveRecord::Migration
       t.string :member_name, null: false
       t.boolean :member_gender, null: false
       t.integer :rank_id, null: false
-      t.integer :grade_id, null: false
+      t.integer :grade, null: false
       t.integer :type_id
       t.integer :pair_id
 

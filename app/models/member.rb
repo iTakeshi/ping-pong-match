@@ -1,7 +1,7 @@
 class Member < ActiveRecord::Base
-  attr_accessible :grade_id, :member_gender, :member_name, :pair_id, :rank_id, :type_id
+  attr_accessible :grade, :member_gender, :member_name, :pair_id, :rank_id, :type_id
 
-  validates :grade_id,
+  validates :grade,
     presence: { message: '期を指定してください。' }
 
   validates :member_gender,
