@@ -1,0 +1,29 @@
+<h2>レベルを追加</h2>
+
+<%= form_for @rank, html: { class: 'form-horizontal' } do |f| %>
+  <% if @rank.errors.any? %>
+    <div class="alert alert-block alert-error">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <h4><%= @rank.errors.count %>個の項目にエラーがあります。</h4>
+      <ul>
+        <% @rank.errors.messages.each do |k, v| %>
+          <li><%= v[0] %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+    <div class="control-group">
+      <%= f.label :rank_name, 'レベルの名前', class: 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :rank_name %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit '作成', class: 'btn btn-primary' %>
+      <%= f.submit '連続作成', class: 'btn btn-primary' %>
+    </div>
+  </fieldset>
+<% end %>

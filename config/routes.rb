@@ -1,9 +1,6 @@
 PingPong::Application.routes.draw do
-  get "members/index"
 
-  get "members/new"
-
-  get "members/edit"
+  resources :ranks
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
