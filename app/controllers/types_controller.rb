@@ -8,6 +8,7 @@ class TypesController < ApplicationController
 
   def show
     @type = Type.find(params[:id])
+    @members = @type.members
   end
 
   def new

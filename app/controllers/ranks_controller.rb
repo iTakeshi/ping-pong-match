@@ -8,6 +8,7 @@ class RanksController < ApplicationController
 
   def show
     @rank = Rank.find(params[:id])
+    @members = @rank.members
   end
 
   def new

@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class CreateTypes < ActiveRecord::Migration
   def change
     create_table :types do |t|
@@ -6,5 +8,7 @@ class CreateTypes < ActiveRecord::Migration
       t.timestamps
     end
     add_index :types, :type_name, unique: true
+
+    Type.create!(type_name: '不明')
   end
 end

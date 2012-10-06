@@ -1,3 +1,9 @@
 <h2><%= @rank.rank_name %></h2>
 
 <%= link_to '名前を変更', edit_rank_path(@rank) %>
+
+<ul>
+  <% @members.each do |member| %>
+    <li><%= member.member_name %></li>
+  <% end %>
+</ul>
