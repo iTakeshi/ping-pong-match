@@ -1,3 +1,5 @@
+# coding :utf-8
+
 class Rank < ActiveRecord::Base
   has_many :members
   attr_accessible :rank_name

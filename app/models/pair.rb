@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class Pair < ActiveRecord::Base
   has_many :members
   attr_accessible :pair_name

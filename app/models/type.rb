@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class Type < ActiveRecord::Base
   has_many :members
   attr_accessible :type_name
