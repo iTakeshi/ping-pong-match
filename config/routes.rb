@@ -1,8 +1,15 @@
 PingPong::Application.routes.draw do
 
+  get "index/help"
+
+  get "index/settings"
+
   resources :ranks
   resources :types
   resources :members
+
+  get '/settings', to: 'index#settings'
+  root to: 'index#help'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
