@@ -14,17 +14,19 @@
 ActiveRecord::Schema.define(:version => 20121006024548) do
 
   create_table "members", :force => true do |t|
-    t.string   "member_name",   :null => false
-    t.boolean  "member_gender", :null => false
-    t.integer  "rank_id",       :null => false
-    t.integer  "grade",         :null => false
+    t.string   "member_name",      :null => false
+    t.string   "member_name_yomi", :null => false
+    t.boolean  "member_gender",    :null => false
+    t.integer  "rank_id",          :null => false
+    t.integer  "grade",            :null => false
     t.integer  "type_id"
     t.integer  "pair_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   add_index "members", ["member_name"], :name => "index_members_on_member_name", :unique => true
+  add_index "members", ["member_name_yomi"], :name => "index_members_on_member_name_yomi", :unique => true
 
   create_table "pairs", :force => true do |t|
     t.string   "pair_name",  :null => false
