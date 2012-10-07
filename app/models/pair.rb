@@ -8,9 +8,11 @@ class Pair < ActiveRecord::Base
     presence: true,
     uniqueness: true
 
+=begin
   validate_members_count
 
   def validate_members_count
     errors.add(:members, 'ペアの人数は2人である必要があります。') if members.length != 2
   end
+=end
 end
