@@ -12,7 +12,7 @@ $ ->
         $(member_li).removeClass('active')
 
     if !($.cookie('attendance'))
-        $.cookie('attendance', ' ')
+        $.cookie('attendance', '')
     attendance = $.cookie('attendance').split(',')
     $.each attendance, ->
         attend('li[data-member-id="' + @ + '"]')

@@ -4,5 +4,20 @@ class MatchesController < ApplicationController
   end
 
   def singles
+    attendance = cookies['attendance'].split(',')
+    attendance.shift
+    @matches_m = generate_singles(Member.where(id: attendance, member_gender: true))
+    @matches_f = generate_singles(Member.where(id: attendance, member_gender: false))
+  end
+
+private
+  def generate_singles(members)
+    members.sort_by!{rand}
+    matches = Array.new
+    loop do
+      matches << members.shift(2)
+      break if members.length < 2
+    end
+    matches
   end
 end

@@ -1,2 +1,20 @@
-<h1>Matches#singles</h1>
-<p>Find me in app/views/matches/singles.html.erb</p>
+<h2>シングルス対戦表</h2>
+とりあえず、参加登録者全員による無条件抽選です。（男女のみ区別）<br>
+組み合わせ条件の入力などはぼちぼち作ります。<br>
+参加登録人数が奇数の場合、余った人は表示されません。
+<h3>男子</h3>
+<ul class="match-list">
+  <% @matches_m.each do |match| %>
+    <li>
+      <%= match[0].member_name %> vs. <%= match[1].member_name %>
+    </li>
+  <% end %>
+</ul>
+<h3>女子</h3>
+<ul class="match-list">
+  <% @matches_f.each do |match| %>
+    <li>
+      <%= match[0].member_name %> vs. <%= match[1].member_name %>
+    </li>
+  <% end %>
+</ul>
