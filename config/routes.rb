@@ -1,5 +1,13 @@
 PingPong::Application.routes.draw do
 
+  get "matches/attendance"
+
+  get "matches/singles"
+
+  get "matchs/attendance"
+
+  get "matchs/singles"
+
   get "index/help"
 
   get "index/settings"
