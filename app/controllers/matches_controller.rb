@@ -15,8 +15,8 @@ private
     members.sort_by!{rand}
     matches = Array.new
     loop do
-      matches << members.shift(2)
       break if members.length < 2
+      matches << members.shift(2)
     end
     matches
   end
