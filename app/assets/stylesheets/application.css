@@ -15,3 +15,12 @@
 table.table tr:first-child {
     border-bottom: double;
 }
+
+#footer {
+    text-align: center;
+    height: 20px;
+    border-top: #dddddd 1px solid;
+    margin: 5px 10px;
+    padding-top: 5px;
+    position: fixed;
+}
