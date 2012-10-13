@@ -1,13 +1,19 @@
+# coding: utf-8
+
 class MatchesController < ApplicationController
   def attendance
     @members = Member.order('member_name_yomi ASC')
   end
 
-  def singles
+  def index
+  end
+
+  def generate
     attendance = cookies['attendance'].split(',')
     attendance.shift
-    @matches_m = generate_singles(Member.where(id: attendance, member_gender: true))
-    @matches_f = generate_singles(Member.where(id: attendance, member_gender: false))
+    male = generate_singles(Member.where(id: attendance, member_gender: true))
+    female = generate_singles(Member.where(id: attendance, member_gender: false))
+    render json: { '男子' => male, '女子' => female }
   end
 
 private
@@ -16,7 +22,7 @@ private
     matches = Array.new
     loop do
       break if members.length < 2
-      matches << members.shift(2)
+      matches << members.shift(2).map{|member| member.member_name}
     end
     matches
   end

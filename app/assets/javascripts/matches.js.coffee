@@ -17,6 +17,16 @@ $ ->
     $.each attendance, ->
         attend('li[data-member-id="' + @ + '"]')
 
+    if !($.cookie('match_type'))
+        $.cookie('match_type', '')
+    if !($.cookie('match_gender'))
+        $.cookie('match_gender', '')
+    if !($.cookie('match_rank'))
+        $.cookie('match_rank', '')
+    attend('button[data-match-type="' + $.cookie('match_type') + '"]')
+    attend('button[data-match-gender="' + $.cookie('match_gender') + '"]')
+    attend('button[data-match-rank="' + $.cookie('match_rank') + '"]')
+
     $('.attendance-member').click (e)->
         member_id = $(@).attr('data-member-id')
         if $(@).hasClass('active')
@@ -27,3 +37,17 @@ $ ->
             attendance.push(member_id)
             $.cookie('attendance', attendance.join())
             attend(@)
+
+    $('#match-config button').click (e) ->
+        $(@).closest('dd').children('button').removeClass('btn-success')
+        $(@).addClass('btn-success')
+
+    $('#match-type button').click (e) ->
+        $.cookie('match_type', $(@).attr('data-match-type'))
+    $('#match-gender button').click (e) ->
+        $.cookie('match_gender', $(@).attr('data-match-gender'))
+    $('#match-rank button').click (e) ->
+        $.cookie('match_rank', $(@).attr('data-match-rank'))
+
+    $('#generate-match').on 'ajax:complete', (response, ajax, status) ->
+        $('#match-table').text($.parseJSON(ajax.responseText))

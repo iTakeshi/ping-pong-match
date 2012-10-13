@@ -1,22 +1,14 @@
 PingPong::Application.routes.draw do
 
-  get "matches/attendance"
-
-  get "matches/singles"
-
-  get "matchs/attendance"
-
-  get "matchs/singles"
-
-  get "index/help"
-
-  get "index/settings"
+  get '/attendance', to: 'matches#attendance'
+  get '/match', to: 'matches#index'
+  get '/match/generate', to: 'matches#generate'
+  get '/settings', to: 'index#settings'
 
   resources :ranks
   resources :types
   resources :members
 
-  get '/settings', to: 'index#settings'
   root to: 'index#help'
 
   # The priority is based upon order of creation:

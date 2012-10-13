@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#match-config {
+    dt {
+        padding-top: 5px;
+    }
+    dd {
+        margin-bottom: 5px;
+    }
+}
+
 .match-list {
     list-style: none;
     margin: 0;

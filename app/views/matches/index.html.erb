@@ -1,0 +1,27 @@
+<h2>対戦表</h2>
+出席登録人数が奇数の場合、余った人は表示されません。<br>
+再読み込みする毎に抽選し直します。
+
+<dl class="dl-horizontal" id="match-config">
+  <dt>対戦種別</dt>
+  <dd class="btn-group" id="match-type" data-toggle="buttons-radio">
+    <button type="button" class="btn" data-match-type="singles">シングルス</button>
+    <button type="button" class="btn" data-match-type="doubles">ダブルス</button>
+    <button type="button" class="btn" data-match-type="group">グループ</button>
+  </dd>
+  <dt>男女区別</dt>
+  <dd class="btn-group" id="match-gender" data-toggle="buttons-radio">
+    <button type="button" class="btn" data-match-gender="split">分ける</button>
+    <button type="button" class="btn" data-match-gender="unite">混合</button>
+  </dd>
+  <dt>レベル区別</dt>
+  <dd class="btn-group" id="match-rank" data-toggle="buttons-radio">
+    <button type="button" class="btn" data-match-rank="split">分ける</button>
+    <button type="button" class="btn" data-match-rank="unite">混合</button>
+  </dd>
+</dl>
+
+<%= link_to '組み合わせ抽選', '/match/generate', class: 'btn btn-primary', id: 'generate-match', style: 'margin-left: 130px;', remote: true %>
+
+<div id="match-table">
+</div>
