@@ -50,11 +50,12 @@ $ ->
         $.cookie('match_rank', $(@).attr('data-match-rank'))
 
     $('#generate-match').on 'ajax:complete', (response, ajax, status) ->
-        matches = $.parseJSON(ajax.responseText)
+        data = $.parseJSON(ajax.responseText)
         table = $('#match-table')
         table.empty()
-        $.each matches, (key, value) ->
+        $.each data.matches, (key, value) ->
             table.append('<h4>' + key + '</h4>')
             table.append('<ul class="match-list"></ul>')
             $.each value, ->
                 $('ul:last').append('<li>' + @[0] + ' vs. ' + @[1] + '</li>')
+        table.append('<h4>抽選漏れ</h4>' + data.rest)
