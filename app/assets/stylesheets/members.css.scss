@@ -4,9 +4,13 @@
 
 ul#attendance-table {
     list-style: none;
+    margin-left: 0;
 
     li {
         width: 100px;
+        text-align: center;
+        overflow: hidden;
         margin: 5px;
+        padding: 0;
     }
 }
