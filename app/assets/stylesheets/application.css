@@ -20,7 +20,6 @@ table.table tr:first-child {
     text-align: center;
     height: 20px;
     border-top: #dddddd 1px solid;
-    margin: 5px 10px;
+    margin: 15px 10px 5px 10px;
     padding-top: 5px;
-    position: fixed;
 }

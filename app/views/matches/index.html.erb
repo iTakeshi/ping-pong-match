@@ -2,7 +2,7 @@
 出席登録人数が奇数の場合、余った人は表示されません。<br>
 再読み込みする毎に抽選し直します。
 
-<dl class="dl-horizontal" id="match-config">
+<dl id="match-config">
   <dt>対戦種別</dt>
   <dd class="btn-group" id="match-type" data-toggle="buttons-radio">
     <button type="button" class="btn" data-match-type="singles">シングルス</button>
@@ -22,7 +22,7 @@
   </dd>
 </dl>
 
-<%= link_to '組み合わせ抽選', '/match/generate', class: 'btn btn-primary', id: 'generate-match', style: 'margin-left: 130px;', remote: true %>
+<%= link_to '組み合わせ抽選', '/match/generate', class: 'btn btn-primary', id: 'generate-match', remote: true %>
 
 <div id="match-table">
 </div>
